@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fazenda da Coletoria — 300 hectares na Serra Catarinense, São Joaquim/SC</title>
+  <meta name="description" content="Fazenda da Coletoria, em São Joaquim (SC): cerca de 300 hectares de paisagens de altitude, nascentes, cascatas, araucárias, tanques, a gruta de São João Maria e múltiplas possibilidades de desenvolvimento.">
+  <meta name="theme-color" content="#24392c">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" content="Fazenda da Coletoria — São Joaquim, SC">
+  <meta property="og:description" content="300 hectares de natureza, história, fé e oportunidades na Serra Catarinense.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://commons.wikimedia.org">
+  <link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;600&family=Newsreader:ital,wght@1,400&display=swap" rel="stylesheet">
+  <style>
+/* ==========================================================================
+   Fazenda da Coletoria — styles.css
+   Linguagem visual inspirada na estrutura do Awwa.html (grid 12 colunas,
+   rótulo + frase grande, divisores tracejados, caixas arredondadas,
+   cabeçalho transparente + flutuante, menu flutuante com progresso).
+   Identidade própria: verde-floresta, papel quente e âmbar.
+   ========================================================================== */
+
+/* ---------- 1. Tokens ---------- */
+:root {
+  --bg: #f6f4ee;
+  --bg-2: #ece8dd;
+  --bg-3: #e2ddcf;
+  --ink: #1f2420;
+  --ink-rgb: 31, 36, 32;
+  --ink-2: #5b6159;
+  --green: #24392c;
+  --green-2: #2f4a39;
+  --green-3: #4f6b57;
+  --amber: #d9822b;
+  --amber-soft: #f0c48f;
+  --white: #fff;
+
+  --font: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
+
+  --inner: 1816px;
+  --pad: 52px;
+  --gutter: 20px;
+  --header-h: 54px;
+
+  --r-s: 4px;
+  --r-m: 8px;
+  --r-l: 16px;
+
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --t: 0.3s;
+}
+
+@media (max-width: 1280px) { :root { --pad: 40px; } }
+@media (max-width: 1023px) { :root { --pad: 24px; } }
+@media (max-width: 576px)  { :root { --pad: 16px; --r-l: 8px; } }
+
+/* ---------- 2. Base ---------- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--ink);
+  background: var(--bg);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+body.is-locked { overflow: hidden; }
+img { display: block; max-width: 100%; height: auto; }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+button { font: inherit; color: inherit; background: none; border: 0; cursor: pointer; }
+strong { font-weight: 600; }
+p { margin-bottom: 1em; }
+p:last-child { margin-bottom: 0; }
+:focus-visible { outline: 2px solid var(--amber); outline-offset: 3px; border-radius: 2px; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+.skip-link {
+  position: absolute; left: 16px; top: -60px; z-index: 100;
+  background: var(--ink); color: var(--white); padding: 10px 18px; border-radius: var(--r-m);
+  transition: top var(--t);
+}
+.skip-link:focus { top: 12px; }
+
+.inner { inline-size: min(100% - var(--pad) * 2, var(--inner)); margin-inline: auto; }
+.inner--lg { --inner: 1386px; }
+.inner--md { --inner: 1216px; }
+.block { margin-block: clamp(50px, 14vw, 170px); }
+.block--tight { margin-block: clamp(30px, 8vw, 90px); }
+
+/* divisor tracejado (marca da referência) */
+.dotted { background-image: linear-gradient(to right, rgba(var(--ink-rgb), 0.9) 0 10%, transparent 10%); background-size: 8px 1px; background-repeat: repeat-x; }
+.dotted--top { background-position: top; }
+.dotted--bottom { background-position: bottom; }
+
+/* ---------- 3. Tipografia ---------- */
+.h1 { font-size: clamp(42px, -6.6px + 9.72vw, 168px); line-height: 0.98; font-weight: 300; letter-spacing: -0.02em; }
+.h2 { font-size: clamp(32px, 16.5px + 3.1vw, 76px); line-height: 1.04; font-weight: 300; letter-spacing: -0.015em; }
+.h3 { font-size: clamp(26px, 15.4px + 2.1vw, 56px); line-height: 1.15; font-weight: 300; letter-spacing: -0.01em; }
+.h4 { font-size: clamp(22px, 12.8px + 1.8vw, 40px); line-height: 1.25; font-weight: 300; }
+.lead { font-size: clamp(18px, 15.9px + 0.42vw, 24px); line-height: 1.5; }
+.serif { font-family: var(--serif); font-style: italic; font-weight: 400; }
+.upper { text-transform: uppercase; }
+
+.c-heading { margin-bottom: clamp(36px, 5vw, 90px); }
+.c-heading__label { display: block; font-size: 16px; font-weight: 400; margin-bottom: clamp(18px, 2.5vw, 28px); }
+.c-heading__label::before { content: ""; display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); margin-right: 10px; vertical-align: 0.05em; }
+.c-heading__title { max-width: 21em; }
+.c-heading--dark { color: var(--white); }
+
+/* ---------- 4. Botões, tags, links ---------- */
+.btn {
+  --b-bg: var(--ink); --b-fg: var(--white); --b-bd: var(--ink);
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.6em;
+  height: 48px; padding: 0 24px; border-radius: var(--r-m);
+  background: var(--b-bg); color: var(--b-fg); border: 0.5px solid var(--b-bd);
+  font-size: 16px; font-weight: 400; white-space: nowrap;
+  transition: background var(--t), color var(--t), border-color var(--t), transform var(--t);
+}
+.btn:hover { --b-bg: #383e39; }
+.btn--sm { height: 42px; padding: 0 20px; }
+.btn--lg { height: 64px; padding: 0 2em; font-size: 18px; }
+.btn--outline { --b-bg: transparent; --b-fg: var(--ink); --b-bd: rgba(var(--ink-rgb), 0.5); }
+.btn--outline:hover { --b-bg: var(--ink); --b-fg: var(--white); --b-bd: var(--ink); }
+.btn--amber { --b-bg: var(--amber); --b-fg: #1a1208; --b-bd: var(--amber); }
+.btn--amber:hover { --b-bg: #e8933f; }
+.btn--light { --b-bg: var(--white); --b-fg: var(--ink); --b-bd: var(--white); }
+.btn--light:hover { --b-bg: var(--amber-soft); --b-fg: var(--ink); }
+.btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+
+.tag {
+  display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 72px;
+  font-size: 14px; font-weight: 400; line-height: 1; white-space: nowrap;
+  border: 0.5px solid currentColor; color: var(--ink);
+}
+.tag--exists { background: var(--green); color: var(--white); border-color: var(--green); }
+.tag--study { background: transparent; color: var(--amber); border-color: var(--amber); }
+.tag--on-dark.tag--study { color: var(--amber-soft); border-color: var(--amber-soft); }
+
+.link-u { position: relative; display: inline-block; line-height: 1.2; font-weight: 500; }
+.link-u::before {
+  content: ""; position: absolute; left: 0; bottom: -0.25em; width: 100%; height: 2px;
+  background-image: linear-gradient(to right, currentColor 45%, rgba(var(--ink-rgb), 0.25) 55%);
+  background-size: 220% 100%; background-position: 100% 50%; transition: background-position 0.3s ease-out;
+}
+.link-u:hover::before { background-position: 0 50%; }
+
+/* ---------- 5. Imagens (slots com arte de fallback) ---------- */
+.ph {
+  position: relative; overflow: hidden; background-color: var(--green-2);
+  isolation: isolate;
+}
+.ph::before { /* arte de fallback: aparece se a foto não existir/carregar */
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    radial-gradient(120% 80% at 80% 0%, rgba(240, 196, 143, 0.55), transparent 55%),
+    radial-gradient(90% 70% at 10% 100%, rgba(15, 28, 20, 0.85), transparent 60%),
+    linear-gradient(160deg, #3b5a45 0%, #24392c 55%, #16241b 100%);
+}
+.ph[data-art="water"]::before {
+  background:
+    radial-gradient(100% 70% at 30% 0%, rgba(190, 228, 232, 0.5), transparent 55%),
+    linear-gradient(170deg, #4d7a80 0%, #2c4f56 55%, #17292d 100%);
+}
+.ph[data-art="field"]::before {
+  background:
+    radial-gradient(110% 60% at 70% 0%, rgba(236, 224, 170, 0.6), transparent 55%),
+    linear-gradient(170deg, #8a9a62 0%, #536a3f 55%, #2c3b24 100%);
+}
+.ph[data-art="wine"]::before {
+  background:
+    radial-gradient(100% 70% at 80% 0%, rgba(230, 160, 140, 0.45), transparent 55%),
+    linear-gradient(165deg, #6a3a46 0%, #3e2230 55%, #1e1219 100%);
+}
+.ph[data-art="stone"]::before {
+  background:
+    radial-gradient(100% 70% at 50% 0%, rgba(255, 238, 205, 0.45), transparent 55%),
+    linear-gradient(170deg, #6e665a 0%, #3f3a33 55%, #1f1c18 100%);
+}
+.ph img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.8s var(--ease), transform 1.2s var(--ease); }
+.ph img.is-loaded { opacity: 1; }
+.ph__empty { /* rótulo discreto quando não há foto */
+  position: absolute; left: 16px; bottom: 14px; right: 16px; font-size: 12px; line-height: 1.3;
+  color: rgba(255, 255, 255, 0.7); letter-spacing: 0.02em;
+}
+.ph:has(img.is-loaded) .ph__empty { display: none; }
+.ph__credit {
+  position: absolute; right: 12px; bottom: 10px; z-index: 2; font-size: 11px; line-height: 1.2;
+  color: rgba(255, 255, 255, 0.85); background: rgba(0, 0, 0, 0.35); padding: 3px 8px; border-radius: 72px;
+  backdrop-filter: blur(4px); max-width: calc(100% - 24px);
+  opacity: 0; transition: opacity var(--t);
+}
+.ph:hover .ph__credit, .ph:focus-within .ph__credit { opacity: 1; }
+@media (hover: none) { .ph__credit { opacity: 1; } }
+
+/* ---------- 6. Marquee superior ---------- */
+.marquee-top {
+  position: relative; z-index: 6; display: flex; align-items: center; height: 50px; overflow: hidden;
+  background: #1b221d; color: #e9e6dc; font-size: 14px; white-space: nowrap;
+}
+.marquee-top__track { display: flex; flex-shrink: 0; justify-content: space-around; min-width: 100%; animation: marquee 48s linear infinite; }
+.marquee-top:hover .marquee-top__track { animation-play-state: paused; }
+.marquee-top__item { display: inline-flex; align-items: center; padding-inline: 18px; }
+.marquee-top__item::after { content: ""; width: 5px; height: 5px; border-radius: 50%; background: var(--amber); margin-left: 36px; }
+@keyframes marquee { to { transform: translateX(-100%); } }
+
+/* ---------- 7. Cabeçalho ---------- */
+#header { position: absolute; top: 50px; left: 0; right: 0; z-index: 5; margin-top: 8px; color: var(--white); }
+.header-main {
+  display: flex; align-items: center; gap: 16px; height: var(--header-h); padding-inline: 6px 6px;
+  border-radius: var(--r-m); transition: background var(--t), color var(--t);
+}
+.logo { display: inline-flex; align-items: center; gap: 12px; padding-left: 10px; line-height: 1; }
+.logo__mark { width: 30px; height: 30px; flex-shrink: 0; }
+.logo__mark path, .logo__mark circle { fill: currentColor; }
+.logo__text { font-size: 16px; font-weight: 500; letter-spacing: 0.01em; white-space: nowrap; }
+.logo__text small { display: block; font-size: 11px; font-weight: 300; letter-spacing: 0.14em; text-transform: uppercase; opacity: 0.75; margin-top: 3px; }
+
+.nav { margin-inline: auto 0; }
+.nav__list { display: flex; align-items: center; }
+.nav__link { display: flex; align-items: center; height: var(--header-h); padding-inline: 12px; font-weight: 400; font-size: 15px; transition: opacity var(--t); }
+.nav__link:hover { opacity: 0.65; }
+.header-main__cta { margin-left: 8px; }
+.hamburger { display: none; width: 48px; height: 48px; align-items: center; justify-content: center; margin-left: auto; }
+.hamburger span { position: relative; display: block; width: 20px; height: 1.5px; background: currentColor; transition: background var(--t); }
+.hamburger span::before, .hamburger span::after { content: ""; position: absolute; left: 0; width: 20px; height: 1.5px; background: currentColor; transition: transform var(--t); }
+.hamburger span::before { top: -6px; }
+.hamburger span::after { top: 6px; }
+.menu-open .hamburger span { background: transparent; }
+.menu-open .hamburger span::before { transform: translateY(6px) rotate(45deg); }
+.menu-open .hamburger span::after { transform: translateY(-6px) rotate(-45deg); }
+
+@media (max-width: 1180px) {
+  .nav, .header-main__cta { display: none; }
+  .hamburger { display: flex; }
+}
+
+/* cabeçalho flutuante */
+.header-floating {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 8; height: 72px;
+  background: rgba(246, 244, 238, 0.94); backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.08);
+  transform: translateY(-100%); transition: transform 0.35s ease-in-out;
+}
+.header-floating.is-show { transform: translateY(0); }
+.header-floating .inner { display: flex; align-items: center; height: 100%; gap: 20px; }
+.header-floating .nav { margin-inline: auto; }
+.header-floating .nav__link { color: var(--ink); height: 72px; }
+.header-floating .hamburger { margin-left: 0; color: var(--ink); }
+@media (max-width: 1180px) { .header-floating .hamburger { margin-left: auto; } }
+@media (max-width: 768px) { .header-floating .btn { display: none; } }
+
+/* menu em tela cheia (mobile/tablet) */
+.menu-panel {
+  position: fixed; inset: 0; z-index: 7; padding: 130px var(--pad) 40px;
+  background: var(--green); color: var(--white); display: flex; flex-direction: column; justify-content: space-between;
+  opacity: 0; visibility: hidden; transition: opacity 0.35s, visibility 0.35s; overflow-y: auto;
+}
+.menu-open .menu-panel { opacity: 1; visibility: visible; }
+.menu-open #header { visibility: hidden; }
+.menu-open .header-floating { z-index: 9; background: transparent; border-color: transparent; transform: translateY(0); color: var(--white); }
+.menu-open .header-floating .nav, .menu-open .header-floating .btn { display: none; }
+.menu-open .header-floating .hamburger { color: var(--white); }
+.menu-panel__list a {
+  display: flex; align-items: baseline; gap: 16px; padding: 12px 0;
+  font-size: clamp(30px, 8vw, 56px); line-height: 1.1; font-weight: 300;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14); transition: padding-left var(--t), color var(--t);
+}
+.menu-panel__list a:hover { padding-left: 12px; color: var(--amber-soft); }
+.menu-panel__list a span { font-size: 13px; opacity: 0.6; min-width: 24px; }
+.menu-panel__foot { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 16px; margin-top: 32px; font-size: 14px; opacity: 0.8; }
+@media (min-width: 1181px) { .menu-panel { display: none; } }
+
+/* ---------- 8. Hero ---------- */
+.hero { position: relative; display: flex; align-items: flex-end; min-height: max(640px, 100svh); margin-top: -50px; padding-top: 50px; color: var(--white); overflow: hidden; }
+.hero__media { position: absolute; inset: 0; z-index: -2; }
+.hero__media .ph { position: absolute; inset: -6% 0; }
+.hero__media .ph img { will-change: transform; }
+.hero::after {
+  content: ""; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(8, 14, 10, 0.55) 0%, rgba(8, 14, 10, 0) 28%, rgba(8, 14, 10, 0) 45%, rgba(8, 14, 10, 0.78) 100%);
+}
+.hero__inner { padding-block: clamp(96px, 14vh, 150px) clamp(40px, 7vh, 80px); }
+.hero__eyebrow { display: flex; flex-wrap: wrap; gap: 8px 24px; font-size: 15px; font-weight: 400; margin-bottom: clamp(18px, 3vw, 36px); }
+.hero__eyebrow span { display: inline-flex; align-items: center; gap: 8px; }
+.hero__eyebrow span::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--amber); }
+.hero__title { text-transform: uppercase; text-wrap: balance; }
+.hero__title em { font-family: var(--serif); font-style: italic; font-weight: 400; text-transform: none; color: var(--amber-soft); }
+.hero__foot { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 28px; margin-top: clamp(28px, 4vw, 64px); }
+.hero__lead { max-width: 34em; }
+.hero__cta { display: flex; flex-wrap: wrap; gap: 12px; }
+.hero__scroll { position: absolute; right: var(--pad); top: 50%; display: none; }
+.scroll-cue { display: inline-flex; align-items: center; gap: 10px; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; }
+.scroll-cue::after { content: ""; width: 1px; height: 44px; background: linear-gradient(var(--white), transparent); animation: cue 2.2s ease-in-out infinite; transform-origin: top; }
+@keyframes cue { 0% { transform: scaleY(0); } 50% { transform: scaleY(1); } 100% { transform: scaleY(1); opacity: 0; } }
+@media (min-width: 1100px) { .hero__scroll { display: block; transform: rotate(90deg) translateX(50%); transform-origin: right center; } }
+
+/* ---------- 9. Território + números ---------- */
+.territory__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); }
+.territory__text { grid-column: 6 / span 7; }
+.territory__text p { font-size: clamp(17px, 16px + 0.2vw, 19px); }
+.territory__aside { grid-column: 1 / span 4; align-self: start; }
+.note {
+  margin-top: 28px; padding: 18px 22px; border-radius: var(--r-m); background: var(--bg-2);
+  font-size: 15px; line-height: 1.55; color: var(--ink-2);
+}
+@media (max-width: 1023px) { .territory__text, .territory__aside { grid-column: 1 / -1; } .territory__aside { order: 2; } }
+
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: clamp(40px, 6vw, 100px); border-top: 1px solid rgba(var(--ink-rgb), 0.9); }
+.stat { padding: clamp(24px, 3vw, 44px) clamp(14px, 2vw, 30px) clamp(24px, 3vw, 44px) 0; border-bottom: 1px solid rgba(var(--ink-rgb), 0.9); }
+.stat:not(:nth-child(3n+1)) { padding-left: clamp(14px, 2vw, 30px); border-left: 1px solid rgba(var(--ink-rgb), 0.9); }
+.stat__num { display: block; font-size: clamp(44px, 24px + 5vw, 128px); line-height: 1; font-weight: 300; letter-spacing: -0.03em; font-variant-numeric: tabular-nums; }
+.stat__num small { font-size: 0.34em; letter-spacing: 0; margin-left: 0.15em; font-weight: 400; }
+.stat__label { display: block; margin-top: 14px; font-size: 14px; line-height: 1.4; color: var(--ink-2); max-width: 20em; }
+@media (max-width: 760px) {
+  .stats { grid-template-columns: 1fr 1fr; }
+  .stat:not(:nth-child(3n+1)) { padding-left: 0; border-left: 0; }
+  .stat:nth-child(even) { padding-left: 16px; border-left: 1px solid rgba(var(--ink-rgb), 0.9); }
+}
+
+/* ---------- 10. Caixa escura (box-figure) ---------- */
+.box-figure { background: var(--green); color: var(--white); border-radius: var(--r-l); padding: clamp(20px, 4vw, 80px); }
+.box-figure__media { border-radius: var(--r-m); aspect-ratio: 19 / 10; }
+@media (max-width: 760px) { .box-figure__media { aspect-ratio: 4 / 3; } }
+.box-figure__grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); margin-top: clamp(28px, 4vw, 64px); }
+.box-figure__intro { grid-column: 1 / span 5; }
+.box-figure__body { grid-column: 7 / span 6; }
+.box-figure p { color: rgba(255, 255, 255, 0.86); font-size: clamp(16px, 15px + 0.2vw, 18px); }
+@media (max-width: 900px) { .box-figure__intro, .box-figure__body { grid-column: 1 / -1; } }
+
+/* atributos: cartões que se abrem (como a paleta da referência) */
+.attrs { display: flex; gap: 8px; margin-top: clamp(40px, 6vw, 90px); min-height: 520px; }
+.attr {
+  position: relative; flex: 1; min-width: 0; border-radius: var(--r-l); overflow: hidden; cursor: pointer;
+  color: var(--white); transition: flex 0.6s var(--ease);
+}
+.attr.ph::before { z-index: 0; }
+.attr > .ph__shade { position: absolute; inset: 0; z-index: 1; background: linear-gradient(180deg, rgba(8, 14, 10, 0.2), rgba(8, 14, 10, 0.78)); }
+.attr__box { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: space-between; height: 100%; padding: 26px; }
+.attr__num { font-size: 14px; opacity: 0.8; }
+.attr__title { font-size: clamp(22px, 1.6vw + 12px, 34px); line-height: 1.1; font-weight: 300; margin: 12px 0; max-width: 11em; }
+.attr__text { max-height: 0; opacity: 0; overflow: hidden; font-size: 15px; line-height: 1.55; max-width: 28em; transition: max-height 0.6s var(--ease), opacity 0.4s 0.15s; }
+.attr.is-open { flex: 2.6; }
+.attr.is-open .attr__text { max-height: 260px; opacity: 1; }
+.attr__tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+@media (min-width: 901px) {
+  .attrs:hover .attr:not(:hover):not(.is-open) { flex: 1; }
+  .attr:hover { flex: 2.6; }
+  .attr:hover .attr__text { max-height: 260px; opacity: 1; }
+}
+@media (max-width: 900px) {
+  .attrs { flex-direction: column; min-height: 0; }
+  .attr { flex: none !important; min-height: 280px; }
+  .attr .attr__text { max-height: none; opacity: 1; }
+}
+
+/* ---------- 11. Água / tanques ---------- */
+.split { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); align-items: center; }
+.split__media { grid-column: 1 / span 6; border-radius: var(--r-l); aspect-ratio: 4 / 5; }
+.split__text { grid-column: 8 / span 5; }
+.split--rev .split__media { grid-column: 7 / span 6; order: 2; }
+.split--rev .split__text { grid-column: 1 / span 5; order: 1; }
+.split__text p { font-size: clamp(16px, 15px + 0.25vw, 19px); }
+.big-figure { display: flex; align-items: baseline; gap: 14px; margin-bottom: 18px; }
+.big-figure strong { font-size: clamp(72px, 40px + 9vw, 200px); line-height: 0.9; font-weight: 300; letter-spacing: -0.04em; }
+.big-figure span { font-size: clamp(18px, 2vw, 28px); font-weight: 300; }
+@media (max-width: 1023px) {
+  .split__media, .split--rev .split__media { grid-column: 1 / -1; order: 0; aspect-ratio: 4 / 3; }
+  .split__text, .split--rev .split__text { grid-column: 1 / -1; order: 1; }
+}
+.tag-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+
+/* ---------- 12. Gruta / história (bloco editorial escuro) ---------- */
+.story { background: #1b221d; color: var(--white); border-radius: var(--r-l); overflow: hidden; }
+.story__media { aspect-ratio: 21 / 9; border-radius: 0; }
+.story__inner { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); padding: clamp(28px, 5vw, 100px); }
+.story__title { grid-column: 1 / span 6; }
+.story__body { grid-column: 8 / span 5; color: rgba(255, 255, 255, 0.86); }
+.story__body p { font-size: clamp(16px, 15px + 0.25vw, 19px); }
+.story__quote { grid-column: 1 / span 6; align-self: end; font-size: clamp(22px, 14px + 1.8vw, 40px); line-height: 1.25; color: var(--amber-soft); margin-top: 24px; }
+.story__sub { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); margin-top: clamp(28px, 4vw, 70px); padding-top: clamp(28px, 4vw, 60px); border-top: 1px solid rgba(255, 255, 255, 0.16); }
+.story__sub h3 { grid-column: 1 / span 4; font-size: clamp(22px, 14px + 1.6vw, 36px); font-weight: 300; line-height: 1.15; }
+.story__sub div { grid-column: 6 / span 7; color: rgba(255, 255, 255, 0.78); }
+@media (max-width: 1023px) {
+  .story__title, .story__body, .story__quote, .story__sub h3, .story__sub div { grid-column: 1 / -1; }
+}
+
+/* ---------- 13. Experiências (slider) ---------- */
+.slider { position: relative; }
+.slider__track {
+  display: flex; gap: 24px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px;
+  scrollbar-width: none; -webkit-overflow-scrolling: touch; cursor: grab;
+}
+.slider__track::-webkit-scrollbar { display: none; }
+.slider__track.is-drag { cursor: grabbing; scroll-snap-type: none; }
+.card {
+  flex: 0 0 min(80vw, 390px); scroll-snap-align: start; display: flex; flex-direction: column;
+  border-radius: var(--r-l); background: var(--bg-2); overflow: hidden; transition: transform var(--t), background var(--t);
+}
+.card:hover { background: var(--bg-3); }
+.card__media { aspect-ratio: 16 / 12; }
+.card__body { display: flex; flex: 1; flex-direction: column; gap: 10px; padding: 24px; }
+.card__num { font-size: 13px; color: var(--ink-2); }
+.card__title { font-size: clamp(20px, 15px + 0.8vw, 26px); line-height: 1.2; font-weight: 400; }
+.card__text { font-size: 15px; line-height: 1.55; color: var(--ink-2); flex: 1; }
+.slider__nav { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: clamp(20px, 3vw, 44px); }
+.slider__hint { font-size: 14px; color: var(--ink-2); max-width: 46em; }
+.slider__btns { display: flex; gap: 12px; flex-shrink: 0; }
+.round {
+  display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; border-radius: 50%;
+  border: 1px solid var(--ink); transition: background var(--t), color var(--t), opacity var(--t);
+}
+.round:hover { background: var(--ink); color: var(--white); }
+.round[disabled] { opacity: 0.3; pointer-events: none; }
+.round svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+
+/* ---------- 14. Produção e sabores ---------- */
+.duo { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--gutter); }
+.panel { border-radius: var(--r-l); background: var(--bg-2); padding: clamp(24px, 4vw, 64px); }
+.panel--dark { background: var(--green); color: var(--white); }
+.panel--dark p { color: rgba(255, 255, 255, 0.86); }
+.panel h3 { margin-bottom: 20px; }
+.panel p { font-size: clamp(16px, 15px + 0.2vw, 18px); }
+@media (max-width: 900px) { .duo { grid-template-columns: 1fr; } }
+
+.flavors { margin-top: clamp(36px, 5vw, 80px); }
+.flavor { display: grid; grid-template-columns: 56px minmax(0, 0.9fr) minmax(0, 1.5fr); gap: var(--gutter); align-items: baseline; padding: clamp(16px, 2vw, 26px) 0; transition: padding-left var(--t), background var(--t); }
+.flavor:hover { padding-left: 12px; background: rgba(var(--ink-rgb), 0.03); }
+.flavor__n { font-size: 13px; color: var(--ink-2); }
+.flavor__t { font-size: clamp(20px, 14px + 1.2vw, 32px); line-height: 1.15; font-weight: 400; }
+.flavor__d { color: var(--ink-2); font-size: 15px; line-height: 1.55; }
+@media (max-width: 760px) { .flavor { grid-template-columns: 36px 1fr; } .flavor__d { grid-column: 2; } }
+
+.events { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+
+/* ---------- 15. Conservação ---------- */
+.conserve { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); }
+.conserve__lead { grid-column: 1 / span 6; }
+.conserve__list { grid-column: 8 / span 5; }
+.conserve__list li { padding: 20px 0; font-size: clamp(16px, 15px + 0.25vw, 19px); line-height: 1.5; }
+.conserve__list li strong { display: block; font-weight: 500; margin-bottom: 4px; }
+@media (max-width: 1023px) { .conserve__lead, .conserve__list { grid-column: 1 / -1; } }
+
+/* ---------- 16. Investimento ---------- */
+.invest { background: var(--green); color: var(--white); border-radius: var(--r-l); padding: clamp(24px, 5vw, 100px); }
+.invest__list { margin-top: clamp(24px, 4vw, 60px); counter-reset: inv; }
+.invest__item {
+  counter-increment: inv; display: grid; grid-template-columns: 64px 1fr auto; gap: var(--gutter); align-items: center;
+  padding: clamp(14px, 1.8vw, 24px) 0; transition: padding-left var(--t), color var(--t);
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0 10%, transparent 10%); background-size: 8px 1px; background-repeat: repeat-x; background-position: bottom;
+  font-size: clamp(18px, 12px + 1.5vw, 34px); line-height: 1.2; font-weight: 300;
+}
+.invest__item::before { content: counter(inv, decimal-leading-zero); font-size: 14px; opacity: 0.6; }
+.invest__item:hover { padding-left: 14px; color: var(--amber-soft); }
+.invest__item .tag { font-size: 12px; height: 28px; }
+.invest__note { margin-top: clamp(24px, 3vw, 44px); padding: 20px 24px; border-radius: var(--r-m); background: rgba(255, 255, 255, 0.08); font-size: 15px; line-height: 1.55; color: rgba(255, 255, 255, 0.9); max-width: 60em; }
+@media (max-width: 760px) { .invest__item { grid-template-columns: 36px 1fr; } .invest__item .tag { grid-column: 2; justify-self: start; } }
+
+/* ---------- 17. Galeria ---------- */
+.gallery { display: grid; grid-template-columns: repeat(12, 1fr); grid-auto-rows: clamp(120px, 14vw, 240px); gap: var(--gutter); }
+.tile { border-radius: var(--r-m); cursor: zoom-in; }
+.tile:nth-child(1) { grid-column: span 7; grid-row: span 3; }
+.tile:nth-child(2) { grid-column: span 5; grid-row: span 2; }
+.tile:nth-child(3) { grid-column: span 5; grid-row: span 2; }
+.tile:nth-child(4) { grid-column: span 4; grid-row: span 2; }
+.tile:nth-child(5) { grid-column: span 3; grid-row: span 2; }
+.tile:nth-child(6) { grid-column: span 5; grid-row: span 1; }
+.tile:not(:has(img.is-loaded)) { cursor: default; }
+.tile img { transition: transform 0.9s var(--ease), opacity 0.8s var(--ease); }
+.tile:hover img { transform: scale(1.04); }
+@media (max-width: 760px) {
+  .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; gap: 10px; }
+  .tile:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+  .tile:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+}
+
+.lightbox { position: fixed; inset: 0; z-index: 20; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(8, 12, 9, 0.92); opacity: 0; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; }
+.lightbox.is-open { opacity: 1; visibility: visible; }
+.lightbox figure { max-width: min(1500px, 100%); max-height: 100%; display: flex; flex-direction: column; gap: 12px; }
+.lightbox img { max-width: 100%; max-height: calc(100vh - 120px); object-fit: contain; border-radius: var(--r-m); margin-inline: auto; }
+.lightbox figcaption { color: rgba(255, 255, 255, 0.8); font-size: 13px; text-align: center; }
+.lightbox__close, .lightbox__nav { position: absolute; width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, 0.12); color: var(--white); display: inline-flex; align-items: center; justify-content: center; transition: background var(--t); }
+.lightbox__close:hover, .lightbox__nav:hover { background: rgba(255, 255, 255, 0.25); }
+.lightbox__close { top: 18px; right: 18px; }
+.lightbox__nav--prev { left: 18px; top: 50%; }
+.lightbox__nav--next { right: 18px; top: 50%; }
+.lightbox svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+
+/* ---------- 18. Contato ---------- */
+.contact { display: grid; grid-template-columns: repeat(12, 1fr); gap: var(--gutter); }
+.contact__intro { grid-column: 1 / span 6; }
+.contact__form { grid-column: 8 / span 5; }
+@media (max-width: 1023px) { .contact__intro, .contact__form { grid-column: 1 / -1; } }
+.field { margin-bottom: 26px; }
+.field label { display: block; margin-bottom: 8px; font-size: 12px; line-height: 1; text-transform: uppercase; letter-spacing: 0.04em; color: var(--ink-2); }
+.field input, .field textarea {
+  width: 100%; padding: 12px 16px; font: inherit; font-size: 16px; color: var(--ink); background: var(--white);
+  border: 0; border-bottom: 1px solid rgba(var(--ink-rgb), 0.2); border-radius: var(--r-s) var(--r-s) 0 0; transition: border-color var(--t);
+}
+.field textarea { min-height: 130px; resize: vertical; }
+.field input:focus, .field textarea:focus { outline: 0; border-color: var(--green); }
+.field.is-invalid input, .field.is-invalid textarea { border-color: #c4452a; }
+.field__msg { display: none; margin-top: 8px; font-size: 13px; color: #c4452a; }
+.field.is-invalid .field__msg { display: block; }
+.form-status { margin-top: 18px; padding: 14px 18px; border-radius: var(--r-m); font-size: 15px; line-height: 1.5; display: none; }
+.form-status.is-show { display: block; background: var(--bg-2); }
+.form-status.is-error { background: #fbe4dd; color: #7d2a16; }
+.contact__alt { margin-top: 28px; display: flex; flex-wrap: wrap; gap: 10px; }
+
+/* ---------- 19. Rodapé ---------- */
+#footer { background: var(--green); color: var(--white); border-radius: var(--r-l) var(--r-l) 0 0; padding-top: clamp(40px, 6vw, 100px); }
+.footer__big { display: flex; flex-wrap: wrap; }
+.footer__big a { display: flex; font-size: clamp(34px, 7vw, 112px); line-height: 1.15; font-weight: 300; letter-spacing: -0.02em; transition: color var(--t); }
+.footer__big a:not(:last-child)::after { content: "—"; margin: 0 0.35em; font-weight: 300; opacity: 0.4; }
+.footer__big a:hover { color: var(--amber-soft); }
+.footer__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: clamp(40px, 5vw, 90px); font-size: 15px; }
+.footer__grid h4 { font-size: 12px; font-weight: 400; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.6; margin-bottom: 14px; }
+.footer__grid li { margin-bottom: 6px; }
+.footer__grid a:hover { opacity: 0.7; }
+.credits-list { font-size: 13px; line-height: 1.5; opacity: 0.85; }
+.credits-list li { margin-bottom: 10px; }
+.credits-list a { text-decoration: underline; text-underline-offset: 3px; }
+.footer__bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; margin-top: clamp(32px, 4vw, 70px); padding-block: 26px 120px; font-size: 13px; opacity: 0.8; background-image: linear-gradient(to right, rgba(255, 255, 255, 0.8) 0 10%, transparent 10%); background-size: 8px 1px; background-repeat: repeat-x; background-position: top; }
+@media (max-width: 900px) { .footer__grid { grid-template-columns: 1fr 1fr; } .footer__bottom { padding-bottom: 60px; } }
+@media (max-width: 520px) { .footer__grid { grid-template-columns: 1fr; } }
+
+/* ---------- 20. Menu flutuante inferior ---------- */
+.menu-float { position: fixed; bottom: -90px; left: 0; right: 0; z-index: 9; display: flex; justify-content: center; padding-inline: 16px; opacity: 0; pointer-events: none; transition: bottom 0.35s ease-in-out, opacity 0.35s; }
+.menu-float.is-visible { bottom: 28px; opacity: 1; }
+.menu-float__wrap { position: relative; display: flex; align-items: center; gap: 6px; padding: 6px; border-radius: 12px; background: rgba(27, 34, 29, 0.86); backdrop-filter: blur(12px); pointer-events: auto; max-width: 100%; }
+.menu-float__progress { position: absolute; inset: 6px; border-radius: var(--r-m); overflow: hidden; pointer-events: none; }
+.menu-float__bar { height: 100%; width: 0; background: rgba(240, 196, 143, 0.14); transition: width 0.15s linear; }
+.menu-float__nav { position: relative; display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; }
+.menu-float__nav::-webkit-scrollbar { display: none; }
+.menu-float__item { display: inline-flex; align-items: center; height: 48px; padding: 0 14px; border-radius: var(--r-m); border: 1px solid transparent; color: #d7d4c9; font-size: 14px; font-weight: 400; white-space: nowrap; transition: color var(--t), border-color var(--t); }
+.menu-float__item:hover { border-color: rgba(255, 255, 255, 0.35); }
+.menu-float__item.is-active { color: var(--amber-soft); border-color: var(--amber-soft); }
+.menu-float__cta { position: relative; flex-shrink: 0; height: 48px; font-size: 14px; }
+.menu-float__top { position: relative; flex-shrink: 0; width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; border-radius: var(--r-m); background: rgba(255, 255, 255, 0.1); color: var(--white); transition: background var(--t); }
+.menu-float__top:hover { background: rgba(255, 255, 255, 0.22); }
+.menu-float__top svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.6; }
+@media (max-width: 768px) { .menu-float { display: none; } }
+
+/* ---------- 21. Animações de entrada ---------- */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.9s var(--ease), transform 0.9s var(--ease); transition-delay: var(--d, 0s); }
+.reveal.is-in { opacity: 1; transform: none; }
+.reveal-img { clip-path: inset(0 0 12% 0 round 8px); transition: clip-path 1.2s var(--ease); }
+.reveal-img.is-in { clip-path: inset(0 0 0 0 round 8px); }
+
+/* sem JS: tudo visível */
+.no-js .reveal, .no-js .reveal-img { opacity: 1; transform: none; clip-path: none; }
+.no-js .ph img { opacity: 1; }
+.no-js .attr .attr__text { max-height: none; opacity: 1; }
+
+/* ---------- 22. Movimento reduzido ---------- */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.001ms !important; animation-iteration-count: 1 !important; transition-duration: 0.001ms !important; }
+  .reveal, .reveal-img { opacity: 1; transform: none; clip-path: none; }
+  .marquee-top__track { animation: none; }
+}
+
+@media print {
+  .marquee-top, #header, .header-floating, .menu-float, .menu-panel, .lightbox { display: none !important; }
+  .reveal, .reveal-img { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+}
+
+</style>
+  <noscript><style>.reveal,.reveal-img{opacity:1!important;transform:none!important;clip-path:none!important}.ph img{opacity:1!important}</style></noscript>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+
+  <!-- Faixa superior com dados confirmados -->
+  <div class="marquee-top" role="region" aria-label="Dados da propriedade">
+    <div class="marquee-top__track">
+      <span class="marquee-top__item"><strong>300 hectares</strong>&nbsp;aproximadamente</span>
+      <span class="marquee-top__item">morro com quase 1.300 m de altitude</span>
+      <span class="marquee-top__item">~2 km de frente para a via</span>
+      <span class="marquee-top__item">~25 km do centro de São Joaquim</span>
+      <span class="marquee-top__item">~200 m da Vinícola Quinta da Neve</span>
+      <span class="marquee-top__item">~5 hectares de tanques</span>
+    </div>
+    <div class="marquee-top__track" aria-hidden="true">
+      <span class="marquee-top__item"><strong>300 hectares</strong>&nbsp;aproximadamente</span>
+      <span class="marquee-top__item">morro com quase 1.300 m de altitude</span>
+      <span class="marquee-top__item">~2 km de frente para a via</span>
+      <span class="marquee-top__item">~25 km do centro de São Joaquim</span>
+      <span class="marquee-top__item">~200 m da Vinícola Quinta da Neve</span>
+      <span class="marquee-top__item">~5 hectares de tanques</span>
+    </div>
+  </div>
+
+  <!-- Cabeçalho (transparente sobre o hero) -->
+  <header id="header">
+    <div class="inner">
+      <div class="header-main">
+        <a class="logo" href="#topo" aria-label="Fazenda da Coletoria — início">
+          <svg class="logo__mark" viewBox="0 0 30 30" fill="currentColor" aria-hidden="true"><path d="M2 11C6 4 24 4 28 11 23 13.5 7 13.5 2 11Z"/><rect x="14" y="11" width="2" height="17"/></svg>
+          <span class="logo__text">Fazenda da Coletoria<small>São Joaquim · SC</small></span>
+        </a>
+        <nav class="nav" aria-label="Principal">
+          <ul class="nav__list">
+            <li><a class="nav__link" href="#territorio">Território</a></li>
+            <li><a class="nav__link" href="#agua">Água</a></li>
+            <li><a class="nav__link" href="#gruta">Gruta</a></li>
+            <li><a class="nav__link" href="#experiencias">Experiências</a></li>
+            <li><a class="nav__link" href="#producao">Produção</a></li>
+            <li><a class="nav__link" href="#investimento">Investimento</a></li>
+          </ul>
+        </nav>
+        <a class="btn btn--light btn--sm header-main__cta" href="#contato">Solicitar informações</a>
+        <button class="hamburger" type="button" data-menu-toggle aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-panel"><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cabeçalho flutuante (aparece ao rolar) -->
+  <div class="header-floating" aria-label="Navegação">
+    <div class="inner">
+      <a class="logo" href="#topo" aria-label="Voltar ao início">
+        <svg class="logo__mark" viewBox="0 0 30 30" fill="currentColor" aria-hidden="true"><path d="M2 11C6 4 24 4 28 11 23 13.5 7 13.5 2 11Z"/><rect x="14" y="11" width="2" height="17"/></svg>
+        <span class="logo__text">Fazenda da Coletoria</span>
+      </a>
+      <nav class="nav" aria-label="Principal (flutuante)">
+        <ul class="nav__list">
+          <li><a class="nav__link" href="#territorio">Território</a></li>
+          <li><a class="nav__link" href="#agua">Água</a></li>
+          <li><a class="nav__link" href="#gruta">Gruta</a></li>
+          <li><a class="nav__link" href="#experiencias">Experiências</a></li>
+          <li><a class="nav__link" href="#producao">Produção</a></li>
+          <li><a class="nav__link" href="#investimento">Investimento</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn--sm" href="#contato">Solicitar informações</a>
+      <button class="hamburger" type="button" data-menu-toggle aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-panel"><span></span></button>
+    </div>
+  </div>
+
+  <!-- Menu em tela cheia -->
+  <div class="menu-panel" id="menu-panel" aria-hidden="true">
+    <ul class="menu-panel__list">
+      <li><a href="#territorio"><span>01</span>Território</a></li>
+      <li><a href="#paisagem"><span>02</span>Paisagem</a></li>
+      <li><a href="#agua"><span>03</span>Água e tanques</a></li>
+      <li><a href="#gruta"><span>04</span>Gruta e história</a></li>
+      <li><a href="#experiencias"><span>05</span>Experiências</a></li>
+      <li><a href="#producao"><span>06</span>Produção e sabores</a></li>
+      <li><a href="#investimento"><span>07</span>Investimento</a></li>
+      <li><a href="#contato"><span>08</span>Contato</a></li>
+    </ul>
+    <div class="menu-panel__foot"><span>Estrada do Bentinho · São Joaquim, SC</span><span>~300 hectares</span></div>
+  </div>
+
+  <main id="conteudo">
+    <!-- ================= HERO ================= -->
+    <section class="hero" id="topo" aria-label="Fazenda da Coletoria">
+      <div class="hero__media">
+        <div class="ph" data-art="dusk">
+          <img
+            src="https://commons.wikimedia.org/wiki/Special:FilePath/Arauc%C3%A1ria_e_c%C3%A9u_estrelado.jpg?width=1800"
+            srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Arauc%C3%A1ria_e_c%C3%A9u_estrelado.jpg?width=1200 1200w, https://commons.wikimedia.org/wiki/Special:FilePath/Arauc%C3%A1ria_e_c%C3%A9u_estrelado.jpg?width=1800 1800w, https://commons.wikimedia.org/wiki/Special:FilePath/Arauc%C3%A1ria_e_c%C3%A9u_estrelado.jpg?width=2600 2600w"
+            sizes="100vw" alt="Araucária sob o céu estrelado, na Serra Catarinense" fetchpriority="high" decoding="async">
+          <span class="ph__credit">Araucária em Lages (SC) · FabioPavan2003 / Wikimedia Commons · CC BY-SA</span>
+        </div>
+      </div>
+      <div class="inner hero__inner">
+        <p class="hero__eyebrow"><span>São Joaquim · Santa Catarina</span><span>Serra Catarinense</span></p>
+        <h1 class="h1 hero__title">Fazenda <em>da</em><br>Coletoria</h1>
+        <div class="hero__foot">
+          <p class="lead hero__lead">300 hectares de natureza, história, fé e oportunidades na Serra Catarinense.</p>
+          <div class="hero__cta">
+            <a class="btn btn--amber btn--lg" href="#territorio">Conhecer a propriedade</a>
+            <a class="btn btn--outline btn--lg" style="--b-fg:#fff;--b-bd:rgba(255,255,255,.6)" href="#contato">Solicitar informações</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero__scroll" aria-hidden="true"><span class="scroll-cue">Role</span></div>
+    </section>
+
+    <!-- ================= TERRITÓRIO ================= -->
+    <section class="block" id="territorio" aria-labelledby="t-territorio">
+      <div class="inner">
+        <div class="c-heading reveal">
+          <span class="c-heading__label">Território</span>
+          <h2 class="h3 c-heading__title" id="t-territorio">Uma propriedade extraordinária onde a grandiosidade das paisagens de altitude, a abundância de águas cristalinas, a história regional e o potencial de desenvolvimento se encontram em um dos cenários mais fascinantes da Serra Catarinense.</h2>
+        </div>
+
+        <div class="territory__grid">
+          <aside class="territory__aside reveal">
+            <p class="c-heading__label" style="margin-bottom:10px">Localização</p>
+            <p>Estrada do Bentinho, a aproximadamente 25 quilômetros do centro de São Joaquim, Santa Catarina.</p>
+            <p class="note">Informações aproximadas, conforme o material descritivo da propriedade. A Estrada do Bentinho encontra-se em processo de asfaltamento, conforme informado.</p>
+          </aside>
+          <div class="territory__text reveal" style="--d:.1s">
+            <p>Localizada na Estrada do Bentinho, a aproximadamente 25 quilômetros do centro de São Joaquim, Santa Catarina, a Fazenda da Coletoria possui cerca de <strong>300 hectares</strong>, reunindo atributos naturais, históricos, produtivos e paisagísticos que abrem possibilidades para projetos de turismo de experiência, hotelaria rural, ecoturismo, turismo de aventura, enoturismo, fruticultura, pecuária e empreendimentos integrados à natureza.</p>
+            <p>Um de seus grandes diferenciais é a localização privilegiada, a aproximadamente <strong>200 metros da Vinícola Quinta da Neve</strong>, em uma região reconhecida pela produção de vinhos de altitude, pela tradição agrícola e pelas paisagens singulares dos campos serranos.</p>
+            <p>A propriedade possui aproximadamente <strong>2 quilômetros de frente para a via</strong>, oferecendo perspectiva de excelente acessibilidade e potencial de valorização associado à melhoria da infraestrutura rodoviária.</p>
+            <p>Mais do que uma propriedade rural, a Fazenda da Coletoria representa uma oportunidade de investimento em um território de grande dimensão, identidade histórica, riqueza natural e múltiplas possibilidades de desenvolvimento.</p>
+          </div>
+        </div>
+
+        <div class="stats reveal" role="list" aria-label="A propriedade em números">
+          <div class="stat" role="listitem"><span class="stat__num" data-count="300">300<small>ha</small></span><span class="stat__label">Cerca de 300 hectares de extensão territorial</span></div>
+          <div class="stat" role="listitem"><span class="stat__num" data-count="2" data-prefix="~">~2<small>km</small></span><span class="stat__label">Aproximadamente 2 quilômetros de frente para a via</span></div>
+          <div class="stat" role="listitem"><span class="stat__num" data-count="25" data-prefix="~">~25<small>km</small></span><span class="stat__label">Do centro de São Joaquim, pela Estrada do Bentinho</span></div>
+          <div class="stat" role="listitem"><span class="stat__num" data-count="200" data-prefix="~">~200<small>m</small></span><span class="stat__label">Da Vinícola Quinta da Neve</span></div>
+          <div class="stat" role="listitem"><span class="stat__num" data-count="1300">1.300<small>m</small></span><span class="stat__label">Quase 1.300 metros de altitude no morro da propriedade</span></div>
+          <div class="stat" role="listitem"><span class="stat__num" data-count="5" data-prefix="~">~5<small>ha</small></span><span class="stat__label">Aproximadamente 5 hectares de tanques</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PAISAGEM ================= -->
+    <section class="block" id="paisagem" aria-labelledby="t-paisagem">
+      <div class="inner">
+        <div class="box-figure">
+          <div class="ph box-figure__media reveal-img" data-art="field">
+            <img loading="lazy" decoding="async"
+              src="https://commons.wikimedia.org/wiki/Special:FilePath/Neve_na_SC-438_em_S%C3%A3o_Joaquim.JPG?width=2000"
+              srcset="https://commons.wikimedia.org/wiki/Special:FilePath/Neve_na_SC-438_em_S%C3%A3o_Joaquim.JPG?width=1000 1000w, https://commons.wikimedia.org/wiki/Special:FilePath/Neve_na_SC-438_em_S%C3%A3o_Joaquim.JPG?width=2000 2000w"
+              sizes="(max-width:1023px) 100vw, 1500px" alt="Campos da zona rural de São Joaquim cobertos de neve">
+            <span class="ph__credit">Zona rural de São Joaquim · Arthur Puls / Wikimedia Commons · CC BY-SA 3.0</span>
+          </div>
+          <div class="box-figure__grid">
+            <div class="box-figure__intro reveal">
+              <span class="c-heading__label">Paisagem</span>
+              <h2 class="h3" id="t-paisagem">Um patrimônio natural de grande singularidade.</h2>
+            </div>
+            <div class="box-figure__body reveal" style="--d:.1s">
+              <p>A propriedade reúne uma paisagem marcada por cascatas de águas cristalinas, múltiplas nascentes, olhos d’água perenes, cursos d’água, mata nativa, araucárias e relevos característicos dos campos de altitude.</p>
+              <p>A abundância de recursos hídricos, associada à vegetação nativa e à diversidade da paisagem, constitui um dos principais diferenciais do imóvel, criando possibilidades para projetos de contemplação, turismo de natureza, trilhas ecológicas, fotografia, lazer e experiências ao ar livre.</p>
+              <p>A combinação entre altitude, amplitude territorial, água e vegetação nativa confere à Fazenda da Coletoria características especialmente interessantes para empreendimentos que valorizem exclusividade, turismo sustentável e experiências autênticas na Serra Catarinense.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="attrs" role="group" aria-label="Atributos naturais">
+          <div class="attr ph" data-art="water" role="button" tabindex="0" aria-expanded="false">
+            <span class="ph__shade"></span>
+            <div class="attr__box">
+              <span class="attr__num">01</span>
+              <div>
+                <h3 class="attr__title">Cascatas e nascentes</h3>
+                <p class="attr__text">Cascatas de águas cristalinas, múltiplas nascentes, olhos d’água perenes e cursos d’água compõem um dos principais diferenciais do imóvel.</p>
+                <div class="attr__tags"><span class="tag tag--exists">Existente</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="attr ph" data-art="dusk" role="button" tabindex="0" aria-expanded="false">
+            <span class="ph__shade"></span>
+            <div class="attr__box">
+              <span class="attr__num">02</span>
+              <div>
+                <h3 class="attr__title">Mata nativa e araucárias</h3>
+                <p class="attr__text">Vegetação nativa e araucárias em meio aos relevos característicos dos campos de altitude, com potencial para trilhas ecológicas, fotografia e experiências ao ar livre.</p>
+                <div class="attr__tags"><span class="tag tag--exists">Existente</span><span class="tag tag--study tag--on-dark">Trilhas: a estudar</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="attr ph" data-art="stone" role="button" tabindex="0" aria-expanded="false">
+            <span class="ph__shade"></span>
+            <div class="attr__box">
+              <span class="attr__num">03</span>
+              <div>
+                <h3 class="attr__title">Morro com quase 1.300 m</h3>
+                <p class="attr__text">Em seu interior, destaca-se um morro com quase 1.300 metros de altitude, de onde se descortinam vistas panorâmicas em direção às paisagens de São Joaquim e Lages.</p>
+                <div class="attr__tags"><span class="tag tag--exists">Existente</span><span class="tag tag--study tag--on-dark">Mirantes e decks: a estudar</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="attr ph" data-art="field" role="button" tabindex="0" aria-expanded="false">
+            <span class="ph__shade"></span>
+            <div class="attr__box">
+              <span class="attr__num">04</span>
+              <div>
+                <h3 class="attr__title">Campos de altitude</h3>
+                <p class="attr__text">Amplitude territorial e paisagens serranas que oferecem potencial para mirantes, decks de contemplação, trilhas panorâmicas e espaços de descanso e conexão com a natureza.</p>
+                <div class="attr__tags"><span class="tag tag--exists">Existente</span><span class="tag tag--study tag--on-dark">Estruturas: a estudar</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ÁGUA / TANQUES ================= -->
+    <section class="block" id="agua" aria-labelledby="t-agua">
+      <div class="inner inner--lg">
+        <div class="split">
+          <div class="ph split__media reveal-img" data-art="water" role="img" aria-label="Espaço reservado para foto dos tanques e das cascatas">
+            <span class="ph__empty">Espaço para foto dos tanques e das cascatas — adicione em <code>assets/img/</code></span>
+          </div>
+          <div class="split__text reveal">
+            <span class="c-heading__label">Água, cascatas e tanques</span>
+            <div class="big-figure"><strong>~5</strong><span>hectares de tanques</span></div>
+            <h2 class="h4" id="t-agua" style="margin-bottom:20px">Um universo de experiências aquáticas.</h2>
+            <p>A Fazenda da Coletoria conta com aproximadamente <strong>5 hectares de tanques</strong>, um diferencial expressivo para projetos relacionados à aquicultura, à criação de peixes e às atividades recreativas associadas à água.</p>
+            <p>Esses ambientes oferecem potencial para pesca esportiva, experiências de lazer e convivência junto aos espelhos d’água e atividades aquáticas compatíveis com as características locais.</p>
+            <p>Associados às cascatas, às nascentes e à paisagem serrana, os tanques podem integrar um projeto turístico diversificado, com espaços de contemplação, recreação e experiências ao ar livre.</p>
+            <p class="note">A implantação das atividades deverá considerar a qualidade e a disponibilidade da água, as condições de segurança e as autorizações ambientais aplicáveis.</p>
+            <div class="tag-row"><span class="tag tag--exists">Tanques existentes</span><span class="tag tag--study">Atividades: a estudar</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GRUTA / HISTÓRIA ================= -->
+    <section class="block" id="gruta" aria-labelledby="t-gruta">
+      <div class="inner">
+        <div class="story">
+          <div class="ph story__media reveal-img" data-art="stone" role="img" aria-label="Espaço reservado para foto da Gruta de São João Maria">
+            <span class="ph__empty">Espaço para foto da gruta — adicione em <code>assets/img/</code></span>
+          </div>
+          <div class="story__inner">
+            <div class="story__title reveal">
+              <span class="c-heading__label">Gruta de São João Maria</span>
+              <h2 class="h2" id="t-gruta">História, fé, peregrinação e tradição.</h2>
+              <p class="story__quote serif">Um elemento com potencial para roteiros de turismo religioso, cultural e histórico, valorizando a memória regional e o respeito às comunidades de fé.</p>
+            </div>
+            <div class="story__body reveal" style="--d:.1s">
+              <p>Um dos elementos mais singulares e simbólicos da Fazenda da Coletoria é a gruta associada à tradição popular de <strong>São João Maria</strong>, figura histórica e religiosa profundamente ligada à fé e à cultura popular da região Sul do Brasil.</p>
+              <p>Segundo a tradição local relatada, o lugar está associado à passagem do monge, que teria passado a noite abrigado sob uma árvore de bugre.</p>
+              <p>A fonte de água ligada à gruta é considerada sagrada por devotos, preservando relatos de fé, bênçãos e crenças populares sobre suas propriedades espirituais e curativas. A tradição também relaciona o local a manifestações religiosas e peregrinações, com pessoas que procuram a gruta em busca da água considerada abençoada para uso sagrado.</p>
+              <p>Esse patrimônio cultural e espiritual confere à propriedade uma identidade que vai além de seus atributos naturais. A gruta pode constituir um dos pontos de maior significado em um projeto de turismo de experiência, com percursos interpretativos, espaços de contemplação e iniciativas voltadas à preservação desse patrimônio simbólico.</p>
+              <div class="tag-row"><span class="tag tag--on-dark tag--exists" style="background:var(--green-2)">Gruta existente</span><span class="tag tag--study tag--on-dark">Roteiros e percursos: a estudar</span></div>
+            </div>
+            <div class="story__sub reveal">
+              <h3>Um nome que evoca a história da Serra.</h3>
+              <div>
+                <p>A denominação Fazenda da Coletoria remete à memória das antigas coletorias, repartições responsáveis pela arrecadação de tributos e relacionadas historicamente à circulação de pessoas, mercadorias e atividades econômicas. Em diferentes períodos, essas repartições desempenharam funções importantes em pontos estratégicos de passagem, contribuindo para a organização administrativa e econômica dos territórios.</p>
+                <p>O próprio nome da fazenda oferece uma oportunidade de aprofundamento histórico e de valorização da identidade do imóvel, mediante pesquisa documental que permita estabelecer com precisão sua trajetória.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= EXPERIÊNCIAS ================= -->
+    <section class="block" id="experiencias" aria-labelledby="t-exp">
+      <div class="inner">
+        <div class="c-heading reveal">
+          <span class="c-heading__label">Turismo de aventura e experiências</span>
+          <h2 class="h3 c-heading__title" id="t-exp">A dimensão territorial e a diversidade topográfica permitem estudar um complexo de turismo de aventura, combinando lazer, adrenalina e contemplação da paisagem.</h2>
+        </div>
+
+        <div class="slider reveal">
+          <div class="slider__track" role="list" aria-label="Alternativas a serem estudadas">
+            <article class="card" role="listitem"><div class="ph card__media" data-art="field"><span class="ph__empty">Trilhas</span></div><div class="card__body"><span class="card__num">01</span><h3 class="card__title">Trilhas ecológicas e cavalgadas</h3><p class="card__text">Percursos em meio aos campos, às araucárias e às paisagens naturais.</p><span class="tag tag--study" style="align-self:flex-start">Possibilidade a estudar</span></div></article>
+            <article class="card" role="listitem"><div class="ph card__media" data-art="stone"><span class="ph__empty">Quadriciclo e motociclismo</span></div><div class="card__body"><span class="card__num">02</span><h3 class="card__title">Circuitos de quadriciclo e motociclismo</h3><p class="card__text">Passeios guiados e trajetos específicos em áreas tecnicamente adequadas.</p><span class="tag tag--study" style="align-self:flex-start">Possibilidade a estudar</span></div></article>
+            <article class="card" role="listitem"><div class="ph card__media" data-art="dusk"><span class="ph__empty">Enduro e motocross</span></div><div class="card__body"><span class="card__num">03</span><h3 class="card__title">Pistas de enduro e motocross</h3><p class="card__text">Espaços destinados a modalidades esportivas, com planejamento de segurança e controle ambiental.</p><span class="tag tag--study" style="align-self:flex-start">Possibilidade a estudar</span></div></article>
+            <article class="card" role="listitem"><div class="ph card__media" data-art="water"><span class="ph__empty">Mega tirolesa</span></div><div class="card__body"><span class="card__num">04</span><h3 class="card__title">Mega tirolesa</h3><p class="card__text">Possibilidade de aproveitar os desníveis naturais para uma experiência panorâmica de aventura.</p><span class="tag tag--study" style="align-self:flex-start">Possibilidade a estudar</span></div></article>
+            <article class="card" role="listitem"><div class="ph card__media" data-art="dusk"><span class="ph__empty">Arborismo</span></div><div class="card__body"><span class="card__num">05</span><h3 class="card__title">Arborismo e percursos de aventura</h3><p class="card__text">Atividades de integração com a paisagem e a vegetação.</p><span class="tag tag--study" style="align-self:flex-start">Possibilidade a estudar</span></div></article>
+            <article class="card" role="listitem"><div class="ph card__media" data-art="field"><span class="ph__empty">Mirantes</span></div><div class="card__body"><span class="card__num">06</span><h3 class="card__title">Mirantes panorâmicos e decks de contemplação</h3><p class="card__text">Espaços voltados à observação das montanhas, à fotografia e à experiência turística.</p><span class="tag tag--study" style="align-self:flex-start">Possibilidade a estudar</span></div></article>
+            <article class="card" role="listitem"><div class="ph card__media" data-art="stone"><span class="ph__empty">Voo livre</span></div><div class="card__body"><span class="card__num">07</span><h3 class="card__title">Voo livre, parapente e asa-delta</h3><p class="card__text">Alternativas a serem avaliadas conforme as condições de vento, relevo e segurança aeronáutica.</p><span class="tag tag--study" style="align-self:flex-start">Possibilidade a estudar</span></div></article>
+            <article class="card" role="listitem"><div class="ph card__media" data-art="wine"><span class="ph__empty">Balonismo</span></div><div class="card__body"><span class="card__num">08</span><h3 class="card__title">Balonismo</h3><p class="card__text">Possibilidade de experiências contemplativas ao amanhecer ou entardecer, condicionadas à viabilidade operacional.</p><span class="tag tag--study" style="align-self:flex-start">Possibilidade a estudar</span></div></article>
+            <article class="card" role="listitem"><div class="ph card__media" data-art="dusk"><span class="ph__empty">Paraquedismo</span></div><div class="card__body"><span class="card__num">09</span><h3 class="card__title">Paraquedismo</h3><p class="card__text">Estudo de uma eventual área de operação, mediante avaliação técnica e cumprimento das exigências aeronáuticas.</p><span class="tag tag--study" style="align-self:flex-start">Possibilidade a estudar</span></div></article>
+            <article class="card" role="listitem"><div class="ph card__media" data-art="water"><span class="ph__empty">Experiências junto à água</span></div><div class="card__body"><span class="card__num">10</span><h3 class="card__title">Experiências junto à água</h3><p class="card__text">Integração dos tanques e das cascatas a atividades recreativas compatíveis com as condições locais.</p><span class="tag tag--study" style="align-self:flex-start">Possibilidade a estudar</span></div></article>
+          </div>
+          <div class="slider__nav">
+            <p class="slider__hint">A implantação de estruturas como tirolesas, rampas de voo, áreas de pouso ou instalações para paraquedismo exige estudos específicos, análise de riscos e autorizações dos órgãos competentes. Nada aqui representa atividade já implantada.</p>
+            <div class="slider__btns">
+              <button class="round" type="button" data-slider-prev aria-label="Anterior"><svg viewBox="0 0 14 14"><path d="M9 2 4 7l5 5"/></svg></button>
+              <button class="round" type="button" data-slider-next aria-label="Próximo"><svg viewBox="0 0 14 14"><path d="m5 2 5 5-5 5"/></svg></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= PRODUÇÃO E SABORES ================= -->
+    <section class="block" id="producao" aria-labelledby="t-prod">
+      <div class="inner">
+        <div class="c-heading reveal">
+          <span class="c-heading__label">Vinhos de altitude, produção rural e sabores</span>
+          <h2 class="h3 c-heading__title" id="t-prod">Uma localização estratégica em uma região reconhecida por seus vinhos de altitude, suas maçãs e sua gastronomia.</h2>
+        </div>
+
+        <div class="duo">
+          <article class="panel panel--dark reveal">
+            <h3 class="h4">Vinhos de altitude</h3>
+            <p>São Joaquim consolidou-se como um dos principais territórios brasileiros de produção de vinhos finos de altitude, atraindo visitantes interessados em vinhedos, degustações, gastronomia e experiências ligadas à cultura do vinho.</p>
+            <p>A proximidade de aproximadamente <strong>200 metros da Vinícola Quinta da Neve</strong> posiciona a Fazenda da Coletoria em um contexto especialmente interessante para avaliar oportunidades relacionadas à vitivinicultura e ao enoturismo, como vinhedos, hospedagem temática, experiências gastronômicas, roteiros de degustação e integração com circuitos regionais do vinho.</p>
+            <p>A escolha das áreas destinadas ao cultivo deverá considerar estudos de solo, clima, insolação, drenagem, relevo e viabilidade produtiva.</p>
+            <div class="tag-row"><span class="tag tag--on-dark tag--exists" style="background:var(--green-2)">Proximidade com a Quinta da Neve</span><span class="tag tag--study tag--on-dark">Vinhedos e enoturismo: a estudar</span></div>
+          </article>
+          <article class="panel reveal" style="--d:.1s">
+            <h3 class="h4">Fruticultura, maçãs e produção agropecuária</h3>
+            <p>São Joaquim possui tradição consolidada na produção de maçãs, especialmente das variedades Fuji e Gala, e integra uma importante região de fruticultura de altitude.</p>
+            <p>A Fazenda da Coletoria permite avaliar projetos de implantação de pomares, diversificação agrícola e integração entre produção rural, turismo e experiências gastronômicas.</p>
+            <p>A propriedade também apresenta potencial para atividades pecuárias, incluindo a criação de bovinos, ovinos e equinos, além de outros animais, conforme as condições das áreas, a disponibilidade de pastagens e a infraestrutura existente.</p>
+            <div class="tag-row"><span class="tag tag--study">Pomares e pecuária: a estudar</span></div>
+          </article>
+        </div>
+
+        <div class="flavors" aria-labelledby="t-sabores">
+          <div class="c-heading reveal" style="margin-bottom:24px">
+            <span class="c-heading__label">Identidade gastronômica</span>
+            <h3 class="h3 c-heading__title" id="t-sabores">A identidade gastronômica da Serra Catarinense.</h3>
+          </div>
+          <ul class="dotted dotted--top">
+            <li class="flavor dotted dotted--bottom reveal"><span class="flavor__n">01</span><span class="flavor__t">Vinhos de altitude</span><span class="flavor__d">Expressão da vitivinicultura serrana e da valorização dos terroirs de altitude.</span></li>
+            <li class="flavor dotted dotted--bottom reveal"><span class="flavor__n">02</span><span class="flavor__t">Maçã Fuji</span><span class="flavor__d">Um dos símbolos da produção agrícola regional.</span></li>
+            <li class="flavor dotted dotted--bottom reveal"><span class="flavor__n">03</span><span class="flavor__t">Queijo Artesanal Serrano</span><span class="flavor__d">Tradição ligada à pecuária e à cultura dos campos nativos.</span></li>
+            <li class="flavor dotted dotted--bottom reveal"><span class="flavor__n">04</span><span class="flavor__t">Mel de Melato da Bracatinga</span><span class="flavor__d">Produto diferenciado da região Sul, associado a reconhecimento geográfico oficial.</span></li>
+            <li class="flavor dotted dotted--bottom reveal"><span class="flavor__n">05</span><span class="flavor__t">Mel de macieira e outros méis florais</span><span class="flavor__d">Possibilidades relacionadas à flora regional e à apicultura.</span></li>
+            <li class="flavor dotted dotted--bottom reveal"><span class="flavor__n">06</span><span class="flavor__t">Carne Frescal de São Joaquim</span><span class="flavor__d">Expressão da tradição gastronômica local.</span></li>
+            <li class="flavor dotted dotted--bottom reveal"><span class="flavor__n">07</span><span class="flavor__t">Pinhão</span><span class="flavor__d">Símbolo da culinária de inverno e da presença das araucárias.</span></li>
+          </ul>
+          <div class="reveal" style="margin-top:36px;max-width:60em">
+            <p>Esse patrimônio cultural e produtivo abre espaço para experiências que conectem visitantes à origem dos alimentos, à cultura rural e às tradições da Serra Catarinense. Conforme a viabilidade técnica e sanitária, podem ser avaliados projetos de apicultura, produção agropecuária, gastronomia regional e atividades de turismo rural.</p>
+            <p>A identidade turística de São Joaquim é construída a partir do clima de altitude, das paisagens serranas, da fruticultura, dos vinhos, da gastronomia e das manifestações culturais. Eventos como a Vindima de Altitude, a Festa Nacional da Maçã e as programações culturais de inverno contribuem para a visibilidade turística do município.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONSERVAÇÃO ================= -->
+    <section class="block block--tight" id="conservacao" aria-labelledby="t-cons">
+      <div class="inner">
+        <div class="conserve">
+          <div class="conserve__lead reveal">
+            <span class="c-heading__label">Conservação ambiental</span>
+            <h2 class="h3" id="t-cons">Água, nascentes e valorização do patrimônio ambiental.</h2>
+            <p style="margin-top:24px;max-width:34em">As múltiplas nascentes, os olhos d’água perenes e os ambientes naturais representam um dos patrimônios mais importantes da Fazenda da Coletoria.</p>
+          </div>
+          <ul class="conserve__list dotted dotted--top reveal" style="--d:.1s">
+            <li class="dotted dotted--bottom"><strong>Proteção das fontes</strong>A conservação da mata ciliar, a proteção das fontes e o manejo responsável dos recursos hídricos são fundamentais para preservar a integridade ambiental da propriedade.</li>
+            <li class="dotted dotted--bottom"><strong>Setores e capacidade de suporte</strong>A dimensão de aproximadamente 300 hectares permite estudar setores para produção, conservação, lazer e turismo, respeitando as áreas legalmente protegidas e a capacidade de suporte dos ecossistemas.</li>
+            <li class="dotted dotted--bottom"><strong>Educação ambiental</strong>Oportunidades para projetos que valorizem a educação ambiental, a observação da natureza e a relação entre atividade econômica e conservação.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= INVESTIMENTO ================= -->
+    <section class="block" id="investimento" aria-labelledby="t-inv">
+      <div class="inner">
+        <div class="invest">
+          <div class="c-heading c-heading--dark reveal" style="margin-bottom:0">
+            <span class="c-heading__label">Possibilidades de desenvolvimento e investimento</span>
+            <h2 class="h2 c-heading__title" id="t-inv">Uma grande propriedade, múltiplas possibilidades de investimento.</h2>
+            <p class="lead" style="margin-top:24px;max-width:36em;color:rgba(255,255,255,.86)">Pela dimensão, localização e diversidade de atributos, a Fazenda da Coletoria oferece uma base para estudar projetos de diferentes escalas e vocações:</p>
+          </div>
+          <ol class="invest__list" aria-label="Vocações a estudar">
+            <li class="invest__item reveal">Complexo de turismo rural, ecoturismo e aventura.</li>
+            <li class="invest__item reveal">Pousada de charme, hotel-fazenda ou empreendimento de hospitalidade.</li>
+            <li class="invest__item reveal">Projeto de enoturismo integrado ao circuito dos vinhos de altitude.</li>
+            <li class="invest__item reveal">Implantação de vinhedos e pomares.</li>
+            <li class="invest__item reveal">Produção agropecuária e pecuária diversificada.</li>
+            <li class="invest__item reveal">Aquicultura, pesca esportiva e experiências de lazer junto aos tanques.</li>
+            <li class="invest__item reveal">Trilhas, cavalgadas, mirantes e atividades de contemplação.</li>
+            <li class="invest__item reveal">Circuitos de quadriciclo, motociclismo e outras atividades de aventura.</li>
+            <li class="invest__item reveal">Estudos de viabilidade para tirolesas, voo livre, balonismo e paraquedismo.</li>
+            <li class="invest__item reveal">Turismo histórico, cultural e religioso associado à gruta de São João Maria.</li>
+            <li class="invest__item reveal">Apicultura e valorização dos produtos típicos regionais.</li>
+            <li class="invest__item reveal">Projetos de conservação ambiental e valorização do patrimônio natural.</li>
+          </ol>
+          <p class="invest__note">A implantação de cada atividade dependerá dos estudos de viabilidade, das condições de uso e ocupação do solo, das características ambientais e das licenças necessárias. As possibilidades acima não representam atividades já implantadas nem resultados econômicos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= GALERIA ================= -->
+    <section class="block" id="galeria" aria-labelledby="t-gal">
+      <div class="inner">
+        <div class="c-heading reveal">
+          <span class="c-heading__label">Galeria fotográfica</span>
+          <h2 class="h3 c-heading__title" id="t-gal">A Serra Catarinense em imagens.</h2>
+          <p style="margin-top:20px;max-width:40em;color:var(--ink-2)">Fotos ilustrativas da região, com créditos. Os espaços vazios aguardam as fotografias da própria fazenda (veja <code>assets/img/</code>).</p>
+        </div>
+        <div class="gallery">
+          <figure class="ph tile reveal-img" data-art="dusk" tabindex="0" data-caption="Araucária em Lages (SC) · FabioPavan2003 / Wikimedia Commons · CC BY-SA" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Arauc%C3%A1ria_e_c%C3%A9u_estrelado.jpg?width=2400">
+            <img loading="lazy" decoding="async" src="https://commons.wikimedia.org/wiki/Special:FilePath/Arauc%C3%A1ria_e_c%C3%A9u_estrelado.jpg?width=1400" alt="Araucária sob o céu estrelado">
+            <span class="ph__credit">FabioPavan2003 / Wikimedia Commons</span>
+          </figure>
+          <figure class="ph tile reveal-img" data-art="field" tabindex="0" data-caption="Zona rural de São Joaquim · Arthur Puls / Wikimedia Commons · CC BY-SA 3.0" data-full="https://commons.wikimedia.org/wiki/Special:FilePath/Neve_na_SC-438_em_S%C3%A3o_Joaquim.JPG?width=2400">
+            <img loading="lazy" decoding="async" src="https://commons.wikimedia.org/wiki/Special:FilePath/Neve_na_SC-438_em_S%C3%A3o_Joaquim.JPG?width=1200" alt="Campos de São Joaquim com neve">
+            <span class="ph__credit">Arthur Puls / Wikimedia Commons</span>
+          </figure>
+          <figure class="ph tile reveal-img" data-art="water"><span class="ph__empty">Cascatas e nascentes</span></figure>
+          <figure class="ph tile reveal-img" data-art="stone"><span class="ph__empty">Gruta de São João Maria</span></figure>
+          <figure class="ph tile reveal-img" data-art="wine"><span class="ph__empty">Vinhedos de altitude</span></figure>
+          <figure class="ph tile reveal-img" data-art="field"><span class="ph__empty">Campos e morro</span></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTATO ================= -->
+    <section class="block" id="contato" aria-labelledby="t-contato">
+      <div class="inner">
+        <div class="contact">
+          <div class="contact__intro reveal">
+            <span class="c-heading__label">Contato</span>
+            <h2 class="h2" id="t-contato">Um território de grandes possibilidades.</h2>
+            <p class="lead" style="margin-top:28px;max-width:30em">Em uma das paisagens mais emblemáticas da Serra Catarinense, a Fazenda da Coletoria oferece a oportunidade de avaliar um projeto que conecte produção, turismo, hospitalidade, aventura, história e conservação ambiental.</p>
+            <p style="margin-top:24px;color:var(--ink-2)">300 hectares · ~2 km de frente para a via · ~25 km de São Joaquim · ~200 m da Quinta da Neve · morro com quase 1.300 m · ~5 ha de tanques.</p>
+          </div>
+          <form class="contact__form reveal" id="contact-form" novalidate style="--d:.1s">
+            <div class="field"><label for="f-nome">Nome *</label><input id="f-nome" name="nome" type="text" autocomplete="name" required aria-describedby="e-nome"><p class="field__msg" id="e-nome">Informe seu nome.</p></div>
+            <div class="field"><label for="f-email">E-mail *</label><input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email"><p class="field__msg" id="e-email">Informe um e-mail válido.</p></div>
+            <div class="field"><label for="f-tel">Telefone</label><input id="f-tel" name="telefone" type="tel" autocomplete="tel"></div>
+            <div class="field"><label for="f-msg">Mensagem *</label><textarea id="f-msg" name="mensagem" required aria-describedby="e-msg"></textarea><p class="field__msg" id="e-msg">Escreva uma mensagem.</p></div>
+            <button class="btn btn--lg btn--amber" type="submit">Solicitar informações</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= RODAPÉ ================= -->
+  <footer id="footer">
+    <div class="inner">
+      <nav class="footer__big" aria-label="Rodapé">
+        <a href="#territorio">Território</a>
+        <a href="#experiencias">Experiências</a>
+        <a href="#investimento">Investimento</a>
+        <a href="#contato">Contato</a>
+      </nav>
+      <div class="footer__grid">
+        <div><h4>Propriedade</h4><ul><li>Fazenda da Coletoria</li><li>Estrada do Bentinho</li><li>São Joaquim, Santa Catarina</li></ul></div>
+        <div><h4>Explorar</h4><ul><li><a href="#paisagem">Paisagem</a></li><li><a href="#agua">Água e tanques</a></li><li><a href="#gruta">Gruta e história</a></li><li><a href="#producao">Produção e sabores</a></li><li><a href="#galeria">Galeria</a></li></ul></div>
+        <div><h4>Aviso</h4><p style="font-size:13px;opacity:.85">Informações baseadas no material descritivo da propriedade e sujeitas a confirmação. Possibilidades de uso dependem de estudos de viabilidade, uso e ocupação do solo, licenças e autorizações dos órgãos competentes.</p></div>
+        <div>
+          <h4>Créditos das imagens</h4>
+          <ul class="credits-list">
+            <li><a href="https://commons.wikimedia.org/wiki/File:Arauc%C3%A1ria_e_c%C3%A9u_estrelado.jpg" target="_blank" rel="noopener">Araucária e céu estrelado</a> — FabioPavan2003, Wikimedia Commons, CC BY-SA (Lages/SC).</li>
+            <li><a href="https://commons.wikimedia.org/wiki/File:Neve_na_SC-438_em_S%C3%A3o_Joaquim.JPG" target="_blank" rel="noopener">Neve na SC-438 em São Joaquim</a> — Arthur Puls, Wikimedia Commons, <a href="https://creativecommons.org/licenses/by-sa/3.0/" target="_blank" rel="noopener">CC BY-SA 3.0</a>.</li>
+            <li>Imagens ilustrativas da região; não retratam necessariamente a propriedade.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom"><span>© <span id="year">2026</span> Fazenda da Coletoria</span><span>São Joaquim · Serra Catarinense</span></div>
+    </div>
+  </footer>
+
+  <!-- Menu flutuante inferior (desktop/tablet) -->
+  <div class="menu-float" aria-label="Navegação por seções">
+    <div class="menu-float__wrap">
+      <div class="menu-float__progress" aria-hidden="true"><div class="menu-float__bar"></div></div>
+      <nav class="menu-float__nav" aria-label="Seções">
+        <a class="menu-float__item" href="#territorio">Território</a>
+        <a class="menu-float__item" href="#paisagem">Paisagem</a>
+        <a class="menu-float__item" href="#agua">Água</a>
+        <a class="menu-float__item" href="#gruta">Gruta</a>
+        <a class="menu-float__item" href="#experiencias">Experiências</a>
+        <a class="menu-float__item" href="#producao">Produção</a>
+        <a class="menu-float__item" href="#investimento">Investimento</a>
+        <a class="menu-float__item" href="#contato">Contato</a>
+      </nav>
+      <a class="btn btn--amber menu-float__cta" href="#contato">Solicitar informações</a>
+      <button class="menu-float__top" type="button" aria-label="Voltar ao topo"><svg viewBox="0 0 16 16"><path d="m3 10 5-5 5 5"/></svg></button>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" role="dialog" aria-modal="true" aria-label="Visualizador de imagens" aria-hidden="true">
+    <button class="lightbox__close" type="button" aria-label="Fechar"><svg viewBox="0 0 16 16"><path d="m3 3 10 10M13 3 3 13"/></svg></button>
+    <button class="lightbox__nav lightbox__nav--prev" type="button" aria-label="Imagem anterior"><svg viewBox="0 0 16 16"><path d="m10 3-5 5 5 5"/></svg></button>
+    <figure><img src="" alt=""><figcaption></figcaption></figure>
+    <button class="lightbox__nav lightbox__nav--next" type="button" aria-label="Próxima imagem"><svg viewBox="0 0 16 16"><path d="m6 3 5 5-5 5"/></svg></button>
+  </div>
+
+  <script>
+/* ==========================================================================
+   Fazenda da Coletoria — main.js
+   JavaScript puro, sem dependências. Cada recurso é um módulo isolado e
+   falha de forma segura (o site continua legível sem JS).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   CONFIGURAÇÃO — preencha para ativar o canal de contato do formulário.
+   Nenhum dado de contato foi informado; não há valores inventados aqui.
+   -------------------------------------------------------------------------- */
+const CONFIG = {
+  email: "",     // ex.: "contato@seudominio.com.br"
+  whatsapp: "",  // somente dígitos com DDI+DDD, ex.: "5548999999999"
+};
+
+(() => {
+  "use strict";
+
+  const $ = (sel, root = document) => root.querySelector(sel);
+  const $$ = (sel, root = document) => Array.from(root.querySelectorAll(sel));
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  document.documentElement.classList.remove("no-js");
+
+  /* ---------- Imagens: fade-in e fallback seguro ---------- */
+  function initImages() {
+    $$(".ph img").forEach((img) => {
+      const done = () => img.classList.add("is-loaded");
+      const fail = () => { img.remove(); };
+      if (img.complete && img.naturalWidth > 0) done();
+      else {
+        img.addEventListener("load", done, { once: true });
+        img.addEventListener("error", fail, { once: true });
+      }
+    });
+  }
+
+  /* ---------- Menu em tela cheia ---------- */
+  function initMenu() {
+    const toggles = $$("[data-menu-toggle]");
+    const panel = $("#menu-panel");
+    if (!toggles.length || !panel) return;
+
+    const setOpen = (open) => {
+      document.body.classList.toggle("menu-open", open);
+      document.body.classList.toggle("is-locked", open);
+      toggles.forEach((b) => b.setAttribute("aria-expanded", String(open)));
+      panel.setAttribute("aria-hidden", String(!open));
+    };
+    toggles.forEach((b) => b.addEventListener("click", () => setOpen(!document.body.classList.contains("menu-open"))));
+    $$("a", panel).forEach((a) => a.addEventListener("click", () => setOpen(false)));
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") setOpen(false); });
+    window.matchMedia("(min-width: 1181px)").addEventListener("change", (m) => { if (m.matches) setOpen(false); });
+  }
+
+  /* ---------- Cabeçalho flutuante, menu inferior, progresso e seção ativa ---------- */
+  function initScrollUI() {
+    const floating = $(".header-floating");
+    const menuFloat = $(".menu-float");
+    const bar = $(".menu-float__bar");
+    const hero = $(".hero");
+    const links = $$(".menu-float__item");
+    const topBtn = $(".menu-float__top");
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const y = window.scrollY;
+      const heroH = hero ? hero.offsetHeight : 600;
+      const past = y > heroH * 0.7;
+      floating && floating.classList.toggle("is-show", past);
+      menuFloat && menuFloat.classList.toggle("is-visible", y > heroH * 0.5);
+      if (bar) {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (max > 0 ? Math.min(100, (y / max) * 100) : 0) + "%";
+      }
+    };
+    window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+    window.addEventListener("resize", update);
+    update();
+
+    topBtn && topBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: reduceMotion ? "auto" : "smooth" }));
+
+    // seção ativa
+    const map = new Map(links.map((a) => [a.getAttribute("href").slice(1), a]));
+    const sections = Array.from(map.keys()).map((id) => document.getElementById(id)).filter(Boolean);
+    if (!("IntersectionObserver" in window) || !sections.length) return;
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        links.forEach((l) => { l.classList.remove("is-active"); l.removeAttribute("aria-current"); });
+        const a = map.get(en.target.id);
+        if (a) {
+          a.classList.add("is-active"); a.setAttribute("aria-current", "true");
+          const nav = a.parentElement;
+          if (nav && nav.scrollWidth > nav.clientWidth) nav.scrollTo({ left: a.offsetLeft - 40, behavior: "smooth" });
+        }
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    sections.forEach((s) => io.observe(s));
+  }
+
+  /* ---------- Revelação ao rolar ---------- */
+  function initReveal() {
+    const els = $$(".reveal, .reveal-img");
+    if (!els.length) return;
+    if (reduceMotion || !("IntersectionObserver" in window)) { els.forEach((e) => e.classList.add("is-in")); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("is-in"); io.unobserve(en.target); } });
+    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    els.forEach((e) => io.observe(e));
+  }
+
+  /* ---------- Contadores ---------- */
+  function initCounters() {
+    const nums = $$("[data-count]");
+    if (!nums.length) return;
+    const fmt = new Intl.NumberFormat("pt-BR");
+    const render = (el, v) => { el.firstChild.nodeValue = (el.dataset.prefix || "") + fmt.format(Math.round(v)); };
+    if (!reduceMotion) nums.forEach((n) => render(n, 0));
+    const run = (el) => {
+      const target = Number(el.dataset.count);
+      if (reduceMotion) { render(el, target); return; }
+      const dur = 1600, t0 = performance.now();
+      const step = (t) => {
+        const p = Math.min(1, (t - t0) / dur);
+        render(el, target * (1 - Math.pow(1 - p, 3)));
+        if (p < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+    if (!("IntersectionObserver" in window)) { nums.forEach((n) => render(n, Number(n.dataset.count))); return; }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((en) => { if (en.isIntersecting) { run(en.target); io.unobserve(en.target); } });
+    }, { threshold: 0.5 });
+    nums.forEach((n) => io.observe(n));
+  }
+
+  /* ---------- Parallax discreto no hero ---------- */
+  function initParallax() {
+    if (reduceMotion) return;
+    const media = $(".hero__media .ph img");
+    const hero = $(".hero");
+    if (!media || !hero) return;
+    let ticking = false;
+    const run = () => {
+      ticking = false;
+      const y = window.scrollY;
+      if (y > hero.offsetHeight) return;
+      media.style.transform = `translate3d(0, ${y * 0.18}px, 0) scale(1.04)`;
+    };
+    window.addEventListener("scroll", () => { if (!ticking) { ticking = true; requestAnimationFrame(run); } }, { passive: true });
+  }
+
+  /* ---------- Cartões de atributos (abre/fecha) ---------- */
+  function initAttrs() {
+    const cards = $$(".attr");
+    if (!cards.length) return;
+    const open = (card) => {
+      cards.forEach((c) => { c.classList.toggle("is-open", c === card); c.setAttribute("aria-expanded", String(c === card)); });
+    };
+    cards.forEach((c, i) => {
+      c.addEventListener("click", () => open(c.classList.contains("is-open") ? null : c));
+      c.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") { e.preventDefault(); c.click(); }
+        if (e.key === "ArrowRight" || e.key === "ArrowDown") { e.preventDefault(); cards[(i + 1) % cards.length].focus(); }
+        if (e.key === "ArrowLeft" || e.key === "ArrowUp") { e.preventDefault(); cards[(i - 1 + cards.length) % cards.length].focus(); }
+      });
+    });
+    if (cards[0]) open(cards[0]);
+  }
+
+  /* ---------- Slider horizontal (scroll-snap + botões + arrastar) ---------- */
+  function initSlider() {
+    const track = $(".slider__track");
+    const prev = $("[data-slider-prev]");
+    const next = $("[data-slider-next]");
+    if (!track) return;
+    const step = () => Math.max(260, (track.querySelector(".card")?.getBoundingClientRect().width || 340) + 24);
+    const sync = () => {
+      if (!prev || !next) return;
+      prev.disabled = track.scrollLeft <= 4;
+      next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 4;
+    };
+    prev && prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: reduceMotion ? "auto" : "smooth" }));
+    next && next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: reduceMotion ? "auto" : "smooth" }));
+    track.addEventListener("scroll", () => requestAnimationFrame(sync), { passive: true });
+    window.addEventListener("resize", sync);
+    sync();
+
+    // arrastar com mouse
+    let down = false, startX = 0, startLeft = 0, moved = false;
+    track.addEventListener("pointerdown", (e) => {
+      if (e.pointerType !== "mouse") return;
+      down = true; moved = false; startX = e.clientX; startLeft = track.scrollLeft;
+    });
+    window.addEventListener("pointermove", (e) => {
+      if (!down) return;
+      const dx = e.clientX - startX;
+      if (Math.abs(dx) > 4) { moved = true; track.classList.add("is-drag"); }
+      track.scrollLeft = startLeft - dx;
+    });
+    window.addEventListener("pointerup", () => { if (!down) return; down = false; track.classList.remove("is-drag"); });
+    track.addEventListener("click", (e) => { if (moved) { e.preventDefault(); e.stopPropagation(); moved = false; } }, true);
+    track.setAttribute("tabindex", "0");
+    track.addEventListener("keydown", (e) => {
+      if (e.key === "ArrowRight") { e.preventDefault(); next && next.click(); }
+      if (e.key === "ArrowLeft") { e.preventDefault(); prev && prev.click(); }
+    });
+  }
+
+  /* ---------- Lightbox da galeria ---------- */
+  function initLightbox() {
+    const box = $(".lightbox");
+    if (!box) return;
+    const img = $("img", box);
+    const cap = $("figcaption", box);
+    const tiles = $$(".tile");
+    let idx = 0, lastFocus = null;
+
+    const available = () => tiles.filter((t) => t.querySelector("img.is-loaded"));
+    const show = (i) => {
+      const list = available();
+      if (!list.length) return;
+      idx = (i + list.length) % list.length;
+      const t = list[idx];
+      const src = t.querySelector("img");
+      img.src = t.dataset.full || src.currentSrc || src.src;
+      img.alt = src.alt;
+      cap.textContent = t.dataset.caption || src.alt;
+    };
+    const open = (tile) => {
+      const list = available();
+      const i = list.indexOf(tile);
+      if (i < 0) return;
+      lastFocus = document.activeElement;
+      show(i);
+      box.classList.add("is-open");
+      box.setAttribute("aria-hidden", "false");
+      document.body.classList.add("is-locked");
+      $(".lightbox__close", box).focus();
+    };
+    const close = () => {
+      box.classList.remove("is-open");
+      box.setAttribute("aria-hidden", "true");
+      document.body.classList.remove("is-locked");
+      lastFocus && lastFocus.focus();
+    };
+    tiles.forEach((t) => {
+      t.addEventListener("click", () => open(t));
+      t.addEventListener("keydown", (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(t); } });
+    });
+    $(".lightbox__close", box).addEventListener("click", close);
+    $(".lightbox__nav--prev", box).addEventListener("click", () => show(idx - 1));
+    $(".lightbox__nav--next", box).addEventListener("click", () => show(idx + 1));
+    box.addEventListener("click", (e) => { if (e.target === box) close(); });
+    document.addEventListener("keydown", (e) => {
+      if (!box.classList.contains("is-open")) return;
+      if (e.key === "Escape") close();
+      if (e.key === "ArrowRight") show(idx + 1);
+      if (e.key === "ArrowLeft") show(idx - 1);
+    });
+  }
+
+  /* ---------- Formulário de contato ---------- */
+  function initForm() {
+    const form = $("#contact-form");
+    if (!form) return;
+    const status = $("#form-status");
+    const say = (msg, error = false) => {
+      status.textContent = msg;
+      status.classList.add("is-show");
+      status.classList.toggle("is-error", error);
+    };
+    const validate = () => {
+      let ok = true;
+      $$(".field", form).forEach((f) => {
+        const input = $("input, textarea", f);
+        const valid = input.checkValidity() && input.value.trim() !== "";
+        f.classList.toggle("is-invalid", !valid);
+        input.setAttribute("aria-invalid", String(!valid));
+        if (!valid) ok = false;
+      });
+      return ok;
+    };
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!validate()) { say("Revise os campos destacados.", true); return; }
+      const d = Object.fromEntries(new FormData(form).entries());
+      const body = `Olá! Gostaria de solicitar informações sobre a Fazenda da Coletoria.\n\nNome: ${d.nome}\nE-mail: ${d.email}\nTelefone: ${d.telefone || "—"}\n\nMensagem:\n${d.mensagem}`;
+      if (CONFIG.whatsapp) {
+        window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(body)}`, "_blank", "noopener");
+        say("Abrimos o WhatsApp com a sua mensagem pronta para envio.");
+      } else if (CONFIG.email) {
+        window.location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent("Solicitação de informações — Fazenda da Coletoria")}&body=${encodeURIComponent(body)}`;
+        say("Abrimos o seu aplicativo de e-mail com a mensagem pronta para envio.");
+      } else {
+        say("O canal de contato ainda não foi configurado neste site. Defina e-mail ou WhatsApp em js/main.js (CONFIG).", true);
+      }
+    });
+    $$("input, textarea", form).forEach((i) => i.addEventListener("input", () => {
+      const f = i.closest(".field");
+      if (f.classList.contains("is-invalid") && i.checkValidity() && i.value.trim()) { f.classList.remove("is-invalid"); i.setAttribute("aria-invalid", "false"); }
+    }));
+  }
+
+  /* ---------- Rodapé ---------- */
+  function initMisc() {
+    const y = $("#year");
+    if (y) y.textContent = String(new Date().getFullYear());
+  }
+
+  [initImages, initMenu, initScrollUI, initReveal, initCounters, initParallax, initAttrs, initSlider, initLightbox, initForm, initMisc]
+    .forEach((fn) => { try { fn(); } catch (err) { console.error("[coletoria]", fn.name, err); } });
+})();
+
+</script>
+</body>
+</html>
